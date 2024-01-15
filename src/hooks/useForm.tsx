@@ -11,8 +11,9 @@ export function useForm(steps: ReactElement[]) {
     setCurrentStep(i);
   }
   return {
-    currentStep,
-    currentComponent: steps[currentStep],
     changeStep,
+    currentComponent: steps[currentStep],
+    currentStep,
+    isLastStep: currentStep + 1 === steps.length ? true : false,
   };
 }
